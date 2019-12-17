@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+      function Person(first, last, age, gender, interests, nationality) {
+        var genderSign = '';
+        var interestsString = '';
+
+        this.name = {
+           first : first,
+           last : last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.nationality = nationality;
+        this.bio = function() {
+          // 性別によって、「He」「She」の表記を区別する
+          if(this.gender.toLowerCase() === 'male') {
+            genderSign = 'He';
+          }else if (this.gender.toLowerCase() === 'female') {
+            genderSign = 'She';
+          }
+          // 趣味の数に応じて、interests表記を変更する
+          var interestsLength = this.interests.length;
+          
+          if(interestsLength === 1) {
+            interestsString = this.interests[0];
+          } else if(interestsLength === 2) {
+            interestsString = this.interests[0] + ' and ' + this.interests[1];
+          
+          } else {
+            for (i = 0; i< interestsLength - 1; i++) {
+              interestsString += this.interests[i] + ',';
+            }
+            interestsString += ' and ' + this.interests[interestsLength - 1];
+          }
+          
+          alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old, and from ' + this.nationality + '. '+ genderSign +' likes ' + interestsString + '.');
+        };
+        this.greeting = function() {
+          alert('Hi! I\'m ' + this.name.first + '.');
+        };
+      }
+    </script>
+</html>
