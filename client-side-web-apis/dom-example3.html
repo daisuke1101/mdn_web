@@ -18,20 +18,13 @@
   // 新規にノードを作成
   var para = document.createElement('p');
   para.textContent = 'We hope you enjoyed the ride.';
-
-  // CSS設定
-  para.style.color = 'white';
-  para.style.backgroundColor = 'black';
-  para.style.padding = '10px';
-  para.style.width = '250px';
-  para.style.textAlign = 'center';
-  
-  
   sect.appendChild(para);
 
   var text = document.createTextNode('— the premier source for web development knowledge.');
   var linkPara = document.querySelector('p');
   linkPara.appendChild(text);
+  sect.appendChild(linkPara);
+  //sect.cloneNode(linkPara);
 
   // リンク内のTEXTを更新
 
@@ -39,6 +32,8 @@
   link.href = 'https://developer.mozilla.org/';  // https://www.mozilla.org/→https://developer.mozilla.org
 
   // 
-  
+  if(window.confirm("TEST")) {
+    sect.removeChild(linkPara);
+  }
   </script>
 </html>

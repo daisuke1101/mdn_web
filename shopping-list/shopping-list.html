@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+    
+    var uList = document.querySelector('ul');  // 2-1
+    var inputText = document.querySelector('input');  // 2-2
+    var inputButton = document.querySelector('button');  // 2-3
+
+    inputButton.onclick = function(){  // 3
+      var inputItem = inputText.value;  // 4
+      inputText.value = '';  // 5
+
+      var listItem = document.createElement('li');  // 6-1
+      var listSpan = document.createElement('span');  // 6-2
+      var deleteButton = document.createElement('button');  // 6-3
+
+      uList.appendChild(listItem);  // 9
+
+      listItem.appendChild(listSpan);  // 7-1
+      listItem.appendChild(deleteButton);  // 7-1
+
+      listSpan.textContent = inputItem;  // 8-1
+      deleteButton.textContent = '削除';  // 8-2
+
+      //deleteButton.onclick = function(){  // 10
+        //listItem.parentNode.removeChild(listItem);
+      //}
+
+      // 正解
+      deleteButton.onclick = function(e){  // 10
+        uList.removeChild(listItem);
+      }
+
+
+
+      inputText.focus();  // 11
+    }
+
+    </script>
+  </body>
+</html>
