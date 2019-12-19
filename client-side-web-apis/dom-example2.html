@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+  </head>
+  <body>
+      <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+      </section>
+  </body>
+  <script>
+  // ノードを変数に代入
+  var link = document.querySelector('a');
+  var sect = document.querySelector('section');
+
+  // 新規にノードを作成
+  var para = document.createElement('p');
+  para.textContent = 'We hope you enjoyed the ride.';
+  sect.appendChild(para);
+
+  var text = document.createTextNode('— the premier source for web development knowledge.');
+  var linkPara = document.querySelector('p');
+  linkPara.appendChild(text);
+  sect.appendChild(linkPara);
+  //sect.cloneNode(linkPara);
+
+  // リンク内のTEXTを更新
+
+  link.textContent = 'Mozilla Developer Network';  // Mozilla homepage→Mozilla Developer Network
+  link.href = 'https://developer.mozilla.org/';  // https://www.mozilla.org/→https://developer.mozilla.org
+
+  // 
+  
+  </script>
+</html>
