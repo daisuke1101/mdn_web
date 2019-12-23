@@ -39,5 +39,3 @@ function draw() {
 
   requestAnimationFrame(draw);
 }
-
-
