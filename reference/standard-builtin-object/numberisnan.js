@@ -7,7 +7,7 @@ function typeOfNaN(x) {
   }
 }
 
-console.log(typeOfNaN('100F'));
+console.log(typeOfNaN('100F'));  // NaN
 
-console.log(typeOfNaN(NaN));
+console.log(typeOfNaN(NaN));  // Number NaN
 
