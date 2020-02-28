@@ -1,0 +1,1 @@
+console.log(new Uint8Array([12, 5, 8, 130, 44]).filter(element => element >= 10));  // Uint8Array(3) [12, 130, 44]
