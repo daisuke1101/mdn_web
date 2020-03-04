@@ -1,4 +1,4 @@
-var resolvedPromiseArray = [Promise.resolve(33), Promise.resolve(44)];
+var resolvedPromiseArray = [Promise.resolve(33), Promise.reject(44)];
 
 var p = Promise.all(resolvedPromiseArray);
 
@@ -11,4 +11,4 @@ setTimeout(function() {
     console.log(p);
 });
 // The Stack is now EMPTY
-// Promise {<resolved>: Array(2)}
+// Promise {<rejected>: 44}
